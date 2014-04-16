@@ -18,13 +18,13 @@ ren :: [Int] -> Int
 ren [] = 1
 ren x 
   | len /= n  = length (group x) + 1
-  | otherwise = length(group x)
+  | otherwise = length (group x)
   where len = length x 
-        n = 10
+        n = 10 --10桁の長さとする
 
 main :: IO()
 main = do 
   args <- getArgs
   case args of
     [] -> print "ERROR"
-    (m:_) ->   print $ length (filter (==(read m :: Int))[ren (int2bin x) | x <- [0..2^10-1]])
+    (m:_) -> print $ length (filter (==(read m :: Int))[ren (int2bin x) | x <- [0..2^10-1]])
